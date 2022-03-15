@@ -1,0 +1,45 @@
+section.team
+    .container
+        +block-Header({
+            caption: "Who we are",
+            title: "Meet our team",
+            desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, similique? Est, tempora voluptatum! Dicta sed molestiae eveniet accusantium expedita, nulla soluta? Error repellat amet exercitationem impedit ipsa! Aspernatur, nihil ratione."
+        })
+        .team-list
+            +teamItem({
+                src: "../images/img-team1.png",
+                author:  "Matthew",
+                text:  "Graphic Design"
+            })
+                +teamSocial({
+                    facebook: "f1",
+                    twitter: "t1",
+                    pinterest: "p1",
+                    instagram: "i1"
+                })
+            +teamItem({
+                src: "../images/img-team2.png",
+                author:  "Christopher Campbell",
+                text:  "Branding/UX design"
+            })
+                +teamSocial({
+                    facebook: "f2",
+                    twitter: "t2",
+                    pinterest: "p2",
+                    instagram: "i2"
+                })
+            +teamItem({
+                src: "../images/img-team3.png",
+                author:  "Michael Fertig",
+                text:  "Developer"
+            })
+                +teamSocial({
+                    facebook: "f3",
+                    twitter: "t3",
+                    pinterest: "p3",
+                    instagram: "i3"
+                })
+
+section.brand 
+    .container 
+        img.brand-logp(src= "../images/img-logos.png")

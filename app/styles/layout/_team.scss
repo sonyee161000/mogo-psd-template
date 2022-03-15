@@ -1,0 +1,110 @@
+.team {
+  --image-height: 47rem;
+  padding: 11rem 0 12rem;
+  &-list {
+    // @include flexbox(stretch, space-between, row, wrap);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+  &-item {
+    // width: calc(33.333% - 2rem);
+    text-align: center;
+
+    // &-content {
+    //   position: relative;
+    //   &::before {
+    //     content: "";
+    //     @include absoluteFull();
+    //     background-color: $third-color;
+    //     z-index: -1;
+    //   }
+    //   &:hover {
+    //     transition: all 0.25s linear;
+    //     transform: translate(-1rem, -1rem);
+    //     &::before {
+    //       transition: all 0.25s linear;
+    //       transform: translate(1rem, 1rem);
+    //     }
+    //     .team-item-layer {
+    //       opacity: 1;
+    //       visibility: visible;
+    //     }
+    //   }
+    // }
+    // &-layer {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   @include size(100%);
+    //   background-image: linear-gradient(
+    //     to bottom,
+    //     rgba($primary-color, 0.8),
+    //     rgba($secondary-color, 0.8)
+    //   );
+    //   @include flexbox(center, center);
+    //   opacity: 0;
+    //   visibility: hidden;
+    //   transition: all 0.25s linear;
+    // }
+    &-img {
+      @include size(100%, var(--image-height));
+      object-fit: cover;
+    }
+    &-icon {
+      @include size(5.5rem);
+      @include flexbox(center, center);
+      font-size: 2.5rem;
+      background-color: $secondary-color;
+      color: $primary-color;
+      &:not(:first-child) {
+        margin-left: 0.1rem;
+      }
+      cursor: pointer;
+      &:hover {
+        color: white;
+        background-color: $primary-color;
+      }
+    }
+    &-info {
+      height: calc(100% - var(--image-height));
+      @include flexbox(center, space-between, column);
+    }
+    &-author {
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    &-text {
+      font-family: $secondary-font;
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 300;
+      color: $text-color;
+    }
+  }
+  @include maxWidth(1023px) {
+    &-list {
+      @include touchSlider(55%);
+    }
+    @include maxWidth(767px) {
+      --image-height: 40rem;
+      padding: 6rem 0;
+      &-list {
+        @include touchSlider(95%);
+      }
+    }
+  }
+}
+
+.brand {
+  background-color: $gray-color;
+  padding: 6rem;
+
+  @include maxWidth(767px) {
+    padding: 3rem;
+  }
+}
+
+@include layerGradient(".team-item-content", ".team-item-layer");

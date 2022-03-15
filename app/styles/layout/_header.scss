@@ -1,0 +1,237 @@
+.header {
+  min-height: 100rem;
+  background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.8),
+      rgba($secondary-color, 0.8)
+    ),
+    url("../images/img-header-bg.jpg") no-repeat center / cover;
+
+  &__top {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &-top {
+    &__logo {
+      font-weight: bold;
+      font-size: 3rem;
+      color: white;
+    }
+    &__toggle {
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+    }
+
+    &__link {
+      display: inline-block;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      transition: all 0.15s linear;
+    }
+
+    &__icon {
+      color: white;
+    }
+  }
+
+  &__content {
+    max-width: 85rem;
+    padding: 16rem 0 15rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &-content {
+    &__caption {
+      font-family: $third-font;
+      font-size: 7.2rem;
+      color: white;
+      margin-bottom: 4rem;
+    }
+
+    &__title {
+      font-size: 15rem;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 5rem;
+      margin-bottom: 5rem;
+      &::after {
+        content: "";
+        @include size(6rem, 0.3rem);
+        background-color: white;
+        bottom: 0;
+        @include absoluteCenter("left");
+      }
+    }
+
+    &__button {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      border: 3px solid white;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  &__bottom {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-bottom {
+    &__item {
+      color: white;
+      border-top: 0.3rem solid white;
+      width: calc(25% - 2.3rem);
+      padding-top: 25px;
+      opacity: 0.6;
+      position: relative;
+      transition: all 0.2s linear;
+      &:not(:last-child) {
+        margin-right: 3rem;
+      }
+      &::before {
+        content: "";
+        @include size(35%, 0.3rem);
+        background-color: $primary-color;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        position: absolute;
+        transition: all 0.2s linear;
+      }
+
+      &:hover {
+        opacity: 1;
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        opacity: 1;
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__number {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+
+    &__text {
+      font-size: 1.8rem;
+      margin-left: 1rem;
+      text-transform: uppercase;
+    }
+  }
+  @include minWidth(768px) {
+    &-top__item:not(:first-child) {
+      margin-left: 5.5rem;
+    }
+    &-top__link {
+      display: inline-block;
+      color: white;
+      border-bottom: 3px solid transparent;
+      padding-bottom: 1.2rem;
+      &:hover {
+        color: $secondary-color;
+        border-bottom-color: $secondary-color;
+      }
+    }
+  }
+
+  @include maxWidth(1024px) {
+    min-height: unset;
+    .header-content__title {
+      font-size: 11rem;
+    }
+    .header__content {
+      padding: 8rem 0 12rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .header-top__toggle {
+      display: inline-block;
+      align-self: center;
+    }
+    .header-top__menu {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 20rem;
+      background-color: white;
+      padding: 2rem 2.5rem;
+      z-index: 2;
+      transform: translateX(100%);
+
+      &.expand {
+        transform: translateX(0);
+      }
+    }
+    .header-top__item {
+      margin-bottom: 1rem;
+    }
+    .header-top__link {
+      color: $text-color;
+      width: 100%;
+      padding: 1.5rem 2rem;
+      border-radius: 0.5rem;
+      &:hover {
+        background-color: $secondary-color;
+        color: white;
+      }
+    }
+    .header-top__icon {
+      display: block;
+      color: $text-color;
+      padding: 1.5rem 2rem;
+      border-radius: 0.5rem;
+      &:hover {
+        color: $primary-color;
+        background-color: $secondary-color;
+      }
+    }
+    .header-content__caption {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    .header-content__title {
+      font-size: 4.5rem;
+      padding-bottom: 3rem;
+      margin-bottom: 4rem;
+    }
+    .header__content {
+      padding: 4rem 0 5rem;
+    }
+    .header-bottom__text {
+      display: none;
+    }
+    .header-bottom__item {
+      padding-top: 1.5rem;
+      text-align: center;
+      &::before {
+        width: 35%;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+section.blog 
+    .container
+        +block-Header({
+            caption: "Our stories",
+            title: "Latest Blog"
+        })
+        ul.blog-list
+            +blogItem({
+                src: "../images/img-blog1.png",
+                dateNumber: "15",
+                dateText: "Jan",
+                title: "Lorem ipsum dolor sit amet",
+                desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit pariatur sit repellat sed aliquid quibusdam cupiditate odit accusantium? Iure non maxime tempora similique aliquam quibusdam incidunt itaque illum iste explicabo.",
+                view: "992",
+                comments: "42"
+            })
+            +blogItem({
+                src: "../images/img-blog2.png",
+                dateNumber: "14",
+                dateText: "Jan",
+                title: "Lorem ipsum dolor sit amet",
+                desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit pariatur sit repellat sed aliquid quibusdam cupiditate odit accusantium? Iure non maxime tempora similique aliquam quibusdam incidunt itaque illum iste explicabo.",
+                view: "542",
+                comments: "17"
+            })
+            +blogItem({
+                src: "../images/img-blog3.png",
+                dateNumber: "12",
+                dateText: "Jan",
+                title: "Lorem ipsum dolor sit amet",
+                desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit pariatur sit repellat sed aliquid quibusdam cupiditate odit accusantium? Iure non maxime tempora similique aliquam quibusdam incidunt itaque illum iste explicabo.",
+                view: "1560",
+                comments: "98"
+            })
+
+section.map 
+    .container 
+        .map-content 
+            img.map-img(src= "../images/img-map-icon.png")
+            h3.map-title Open Map

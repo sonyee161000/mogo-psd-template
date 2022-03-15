@@ -1,0 +1,93 @@
+.work {
+  padding-top: 11rem;
+
+  &-list {
+    display: flex;
+    height: 78rem;
+  }
+
+  &-column {
+    width: 25%;
+  }
+
+  &-item {
+    height: 50%;
+  }
+
+  &-item--full {
+    height: 100%;
+  }
+
+  &-img {
+    @include size(100%);
+    object-fit: cover;
+  }
+
+  &-content {
+    flex-direction: column !important;
+    color: white;
+  }
+
+  &-icon {
+    @include size(3rem);
+  }
+
+  &-title {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &-desc {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @include maxWidth(1600px) {
+    &-list {
+      height: 60rem;
+    }
+  }
+
+  @include maxWidth(1279px) {
+    &-list {
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    &-column {
+      width: 50%;
+    }
+  }
+
+  @include maxWidth(767px) {
+    padding-top: 6rem;
+    &-list {
+      display: grid;
+      grid-auto-columns: 90%;
+      grid-auto-flow: column;
+      overflow-x: auto;
+      @include hideScroll();
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+    }
+
+    &-column {
+      width: 100%;
+      padding-left: 1rem;
+      &:nth-child(4) {
+        padding-right: 1rem;
+      }
+      scroll-snap-align: start;
+    }
+
+    &-item {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@include layerGradient(".work-item", ".work-content", "false");

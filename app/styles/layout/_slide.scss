@@ -1,0 +1,114 @@
+.slide {
+  background-color: $gray-color;
+  padding: 7rem 0;
+
+  &-icon {
+    color: $gray-dark-color;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 0 2rem;
+  }
+  &-item {
+    @include flexbox(center, center);
+    margin: 0 5.5rem;
+    &-img {
+      @include size(15rem);
+      @include flexbox(center, center);
+      flex-shrink: 0;
+      border: 3px solid $third-color;
+      margin-right: 6rem;
+    }
+    &-people {
+      img {
+        @include size(21rem);
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      flex-shrink: 0;
+      margin-right: 3rem;
+    }
+
+    &-text {
+      font-family: $secondary-font;
+      font-weight: 300;
+      font-size: 2.4rem;
+      color: $text-color;
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 2rem;
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &-author {
+      font-family: $third-font;
+      font-size: 2.4rem;
+      position: relative;
+      padding-left: 7rem;
+      &::before {
+        content: "";
+        @include size(6rem, 0.3rem);
+        background-color: $primary-color;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  // slick slider
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
+  .slick-arrow {
+    background-color: transparent;
+    color: $gray-dark-color;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 0 2rem;
+    border: none;
+    position: absolute;
+    @include absoluteCenter("top");
+    z-index: 10;
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+
+  @include maxWidth(767px) {
+    padding: 6rem 0;
+    &-icon {
+      display: none;
+    }
+    &-item {
+      flex-direction: column;
+      margin: 0;
+      &-img {
+        @include size(10rem);
+        margin-right: 0;
+        img {
+          max-width: 50%;
+        }
+      }
+      &-box {
+        padding: 0;
+      }
+      &-text {
+        display: block;
+        font-size: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+      }
+      &-author {
+        font-size: 2.2rem;
+      }
+    }
+  }
+}

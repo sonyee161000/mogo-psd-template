@@ -1,0 +1,59 @@
+.header
+    .container 
+        .header__top
+            a.header-top__logo(href= "index.html") MoGo
+            i.fa.fa-bars.header-top__toggle
+            ul.header-top__menu
+                +headerTopItem({
+                    title: "about",
+                    href: "#"
+                })
+                +headerTopItem({
+                    title: "service",
+                    href: "#"
+                })
+                +headerTopItem({
+                    title: "work",
+                    href: "#"
+                })
+                +headerTopItem({
+                    title: "blog",
+                    href: "#"
+                })
+                +headerTopItem({
+                    title: "contact",
+                    href: "#"
+                })
+                li.header-top__item 
+                    a.header-top__icon(href= "#")
+                        i.fa.fa-shopping-cart
+                li.header-top__item 
+                    a.header-top__icon(href= "#")
+                        i.fa.fa-search
+        .header__content 
+            h2.header-content__caption Criative Template
+            h1.header-content__title Welcome to mogo
+            a.header-content__button(href= "#") Learn more
+        .header__bottom
+            +headerBottomItem({
+                active: "active",
+                number: "01",
+                title: "intro"
+            })
+            +headerBottomItem({
+                active: "",
+                number: "02",
+                title: "work"
+            })
+            +headerBottomItem({
+                active: "",
+                number: "03",
+                title: "about"
+            })
+            +headerBottomItem({
+                active: "",
+                number: "04",
+                title: "contacts"
+            })
+
+
